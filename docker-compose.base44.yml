@@ -10,6 +10,8 @@ services:
     environment:
       - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
       - BASE44_PUBLIC_HOST_SUFFIX
+    env_file:
+      - /run/base44/app.env
     restart: on-failure
     healthcheck:
       test: ["CMD", "node", "-e", "fetch('http://localhost:5173/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]

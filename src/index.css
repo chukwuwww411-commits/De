@@ -280,6 +280,105 @@ body {
   font-size: 0.85rem;
 }
 
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal {
+  background: var(--surface);
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+.modal-close:hover { color: var(--text); }
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.modal-desc {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+.modal-price {
+  margin-bottom: 24px;
+}
+.modal-price-amount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent-2);
+}
+.modal-price-period {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-left: 8px;
+}
+.modal-features {
+  text-align: left;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.modal-feature {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+.modal-error {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+.modal-loading {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+.modal-success {
+  padding: 20px 0;
+}
+.modal-success-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+.modal-success h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.modal-success p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+.paypal-buttons {
+  min-height: 50px;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
   .hero h1 { font-size: 2.2rem; }

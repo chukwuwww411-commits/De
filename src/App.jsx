@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import PremiumModal from "./PremiumModal.jsx";
 
 const features = [
   { icon: "📚", title: "Learn something new", desc: "Expand your knowledge with curated content that helps you grow." },
@@ -19,8 +20,11 @@ const messages = [
 ];
 
 export default function App() {
+  const [showPremium, setShowPremium] = useState(false);
   return (
     <>
+      {showPremium && <PremiumModal onClose={() => setShowPremium(false)} />}
+
       {/* NAV */}
       <nav className="nav">
         <div className="container nav-inner">
@@ -42,7 +46,7 @@ export default function App() {
         <p>AviatoHub brings useful knowledge, inspiring content, creator resources, and digital tools together in one place — helping you learn, create, discover, and keep moving forward.</p>
         <div className="hero-cta">
           <a href="#features" className="btn btn-primary">Explore AviatoHub</a>
-          <a href="#premium" className="btn btn-outline">Start Premium</a>
+          <button className="btn btn-outline" onClick={() => setShowPremium(true)}>Start Premium</button>
         </div>
       </header>
 
@@ -80,7 +84,7 @@ export default function App() {
             <p>Get access to premium content, exclusive resources, and additional downloads designed to help you get more from your AviatoHub experience.</p>
             <p>Your growth is worth investing in.</p>
             <div className="hero-cta">
-              <a href="#start" className="btn btn-primary">Start Premium</a>
+              <button className="btn btn-primary" onClick={() => setShowPremium(true)}>Start Premium</button>
               <a href="#features" className="btn btn-outline">Explore AviatoHub</a>
             </div>
           </div>
@@ -109,7 +113,7 @@ export default function App() {
           <div className="discover">Discover. Create. Download. Grow.</div>
           <div className="hero-cta">
             <a href="#features" className="btn btn-primary">Explore AviatoHub</a>
-            <a href="#premium" className="btn btn-outline">Start Premium</a>
+            <button className="btn btn-outline" onClick={() => setShowPremium(true)}>Start Premium</button>
           </div>
         </div>
       </section>

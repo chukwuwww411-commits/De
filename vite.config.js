@@ -8,4 +8,7 @@ export default defineConfig({
     port: 5173,
     allowedHosts: true,
   },
+  define: {
+    "import.meta.env.PAYPAL_CLIENT_ID": JSON.stringify(process.env.PAYPAL_CLIENT_ID || ""),
+  },
 });
